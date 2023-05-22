@@ -2021,9 +2021,6 @@ struct ImGuiContext
     ImVec2                  NavWindowingAccumDeltaPos;
     ImVec2                  NavWindowingAccumDeltaSize;
 
-    // Range-Select/Multi-Select
-    ImGuiMultiSelectState   MultiSelectState;                   // FIXME-MULTISELECT: We currently don't support recursing/stacking multi-select
-
     // Render
     float                   DimBgRatio;                         // 0.0..1.0 animation when fading in a dimming background (for modal window and CTRL+TAB list)
 
@@ -2063,6 +2060,9 @@ struct ImGuiContext
     ImPool<ImGuiTabBar>             TabBars;
     ImVector<ImGuiPtrOrIndex>       CurrentTabBarStack;
     ImVector<ImGuiShrinkWidthItem>  ShrinkWidthBuffer;
+
+    // Multi-Select state
+    ImGuiMultiSelectState           MultiSelectState;           // FIXME-MULTISELECT: We currently don't support recursing/stacking multi-select
 
     // Hover Delay system
     ImGuiID                 HoverItemDelayId;
@@ -3147,7 +3147,7 @@ namespace ImGui
     IMGUI_API ImGuiTypingSelectRequest* GetTypingSelectRequest(ImGuiTypingSelectFlags flags = ImGuiTypingSelectFlags_None);
     IMGUI_API int           TypingSelectFindResult(ImGuiTypingSelectRequest* req, int items_count, const char* (*get_item_name_func)(void*, int), void* user_data, int nav_item_idx);
 
-    // Multi-Select/Range-Select API
+    // Multi-Select API
     IMGUI_API void          MultiSelectItemHeader(ImGuiID id, bool* p_selected);
     IMGUI_API void          MultiSelectItemFooter(ImGuiID id, bool* p_selected, bool* p_pressed);
 
