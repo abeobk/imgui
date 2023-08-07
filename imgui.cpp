@@ -13956,7 +13956,6 @@ void ImGui::ShowMetricsWindow(bool* p_open)
     }
 
     // Details for MultiSelect
-    SetNextItemOpen(true, ImGuiCond_Once);
     if (TreeNode("MultiSelect", "MultiSelect (%d)", g.MultiSelectStorage.GetAliveCount()))
     {
         for (int n = 0; n < g.MultiSelectStorage.GetMapSize(); n++)
