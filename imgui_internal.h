@@ -3170,7 +3170,7 @@ namespace ImGui
     IMGUI_API int           TypingSelectFindResult(ImGuiTypingSelectRequest* req, int items_count, const char* (*get_item_name_func)(void*, int), void* user_data, int nav_item_idx);
 
     // Multi-Select API
-    IMGUI_API void          MultiSelectItemHeader(ImGuiID id, bool* p_selected);
+    IMGUI_API void          MultiSelectItemHeader(ImGuiID id, bool* p_selected, ImGuiButtonFlags* p_button_flags);
     IMGUI_API void          MultiSelectItemFooter(ImGuiID id, bool* p_selected, bool* p_pressed);
 
     // Internal Columns API (this is not exposed because we will encourage transitioning to the Tables API)
